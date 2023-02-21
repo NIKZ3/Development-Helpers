@@ -1,0 +1,28 @@
+# User specific aliases and functions
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+# User specific aliases and functions
+NS=default
+alias k='kubectl -n $NS'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias depl='kubectl get deployment -n $NS'
+alias kdes='kubectl describe pod -n $NS'
+alias pods='kubectl get pods -n $NS '
+alias sts='kubectl get statefulsets -n $NS'
+alias m='python3 /root/mdcapdir/dcap/mdcapcli/mdcap.py'
+alias mdcap='python3 /root/mdcapdir/dcap/mdcapcli/mdcap.py'
+alias mlogin='mdcap login admin -p admin -t 999999'
+alias ie='kubectl exec -it -n $NS'
+alias den='x=$(pods | grep engine) && x=($x) && kubectl delete pods ${x[0]} -n $NS'
+alias een='x=$(pods | grep engine) && x=($x) && kubectl exec -it ${x[0]}  -n $NS -- bash'
+alias len='x=$(pods | grep engine) && x=($x) && kubectl logs ${x[0]} -f -n $NS'
+alias klogs='kubectl logs  -n $NS'
+alias kedit='kubectl edit -n $NS'
+alias kdel='kubectl delete pod -n $NS'
+alias pvc='kubectl get pvc -n $NS'
+alias mdcap='python3 /root/mdcapdir/dcap/mdcapcli/mdcap.py'
+ 
